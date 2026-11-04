@@ -6,7 +6,7 @@ const filename = process.argv[2];
 const fileContent = fs.readFileSync(filename, 'utf-8');
 const lines = fileContent.split('\n');
 for (const lineFromLavaFile of lines) {
-  
+
  if (!lineFromLavaFile.trim()) continue;
  const [ command, arg1, arg2 ] = lineFromLavaFile.trim().split(" ");
 
@@ -44,5 +44,4 @@ else {
     // Catch-all rule for when someone types a command Lava doesn't recognize yet
     console.error(`Lava Syntax Error: Unknown command "${command}"`);
 };
-
-
+}
