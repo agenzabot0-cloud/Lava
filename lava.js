@@ -8,3 +8,12 @@ if (arg1 === undefined) {
     console.error("Lava Syntax Error: This command requires an argument!");
 }
 
+
+const realValue = Number(arg2); 
+if (isNaN(realValue)) {
+    memory[arg1] = arg2; 
+} else {
+    memory[arg1] = realValue; 
+}
+
+
