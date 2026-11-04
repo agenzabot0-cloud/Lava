@@ -13,7 +13,7 @@ for (const lineFromLavaFile of lines) {
      if (arg1 === undefined) {
          console.error("Lava Syntax Error: This command requires an argument!");
          continue;
-}
+};
 
 
 const realValue = Number(arg2); 
@@ -21,7 +21,7 @@ if (isNaN(realValue)) {
     memory[arg1] = arg2; 
 } else {
     memory[arg1] = realValue; 
-}
+};
 if (command === "set") {
     memory[arg1] = realValue;
     console.log(`[Lava] Successfully stored ${arg1}`);
@@ -30,19 +30,19 @@ if (command === "set") {
 else if (command === "print") {
     const output = memory[arg1] !== undefined ? memory[arg1] : arg1;
     console.log(output);
-} 
+}; 
 
 else if (command === "flow") {
     if (memory[arg1] !== undefined) {
         memory[arg1] += Number(arg2);
     } else {
         console.error(`Lava Error: Variable ${arg1} does not exist yet!`);
-    }
-} 
+    };
+}; 
 
 else {
     // Catch-all rule for when someone types a command Lava doesn't recognize yet
     console.error(`Lava Syntax Error: Unknown command "${command}"`);
-}
+};
 
 
