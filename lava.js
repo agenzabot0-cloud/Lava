@@ -2,7 +2,6 @@
 import fs from 'fs';
 // right here were gonna set LAVA args
 const memory = {};
-const [command, arg1, arg2] = lineFromLavaFile.split(" ");
 const filename = process.argv[2];
 const fileContent = fs.readFileSync(filename, 'utf-8');
 const lines = fileContent.split('\n');
