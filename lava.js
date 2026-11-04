@@ -4,9 +4,16 @@ import fs from 'fs';
 const memory = {};
 const [command, arg1, arg2] = lineFromLavaFile.split(" ");
 const filename = process.argv[2];
+const fileContent = fs.readFileSync(filename, 'utf-8');
+const lines = fileContent.split('\n');
+for (const lineFromLavaFile of lines) {
+  
+ if (!lineFromLavaFile.trim()) continue;
+ const [ command, arg1, arg2 ] = lineFromLavaFile.trim().split(" ");
 
-if (arg1 === undefined) {
-    console.error("Lava Syntax Error: This command requires an argument!");
+     if (arg1 === undefined) {
+         console.error("Lava Syntax Error: This command requires an argument!");
+         continue;
 }
 
 
